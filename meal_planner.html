@@ -127,7 +127,12 @@
 </head>
 
 <body>
-
+	{% if message %}
+	<script>
+        // JavaScript code to display an alert
+        alert("{{ message }}");
+    </script>
+	{% endif %}
 	<button class="btn-open-popup" onclick="togglePopup()">
 		Create a new schedule
 	</button>
@@ -136,9 +141,6 @@
 		<div class="popup-box">
 			<h2 style="color: green;">Create a new schedule</h2>
 			<form action="{{url_for('meal_planner')}}" method="POST">
-				<label class="form-label" for="name">Date:</label>
-				<input class="form-input" type="text" placeholder="Enter date" id="date" name="date" required>
-
 				<label class="form-label" for="note">Note:</label>
 				<input class="form-input" type="text" placeholder="Enter any notes" id="note" name="note">
 
