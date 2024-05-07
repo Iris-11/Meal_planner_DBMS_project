@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Profile</h2>
+
+<table>
+    {% for row in user_details%}
+    <tr>
+        <td>username</td>
+        <td>{{row.username}}</td>
+    </tr>
+    <tr>
+        <td>email</td>
+        <td>{{row.email}}</td>
+    </tr>
+    <tr>
+        <td>age</td>
+        <td>{{row.age}}</td>
+    </tr>
+    <tr>
+        <td>height</td>
+        <td>{{row.height}}</td>
+    </tr>
+    <tr>
+        <td>weight</td>
+        <td>{{row.weight}}</td>
+    </tr>
+    <tr>
+        <td>gender</td>
+        <td>{{row.gender}}</td>
+    </tr>
+    {% endfor %}
+</table>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping List</title>
+</head>
+<body>
+    <h1>Shopping List</h1>
+    <form action="{{ url_for('add_to_list') }}" method="POST">
+        <h2>Available Ingredients:</h2>
+        {% for ingredient in ingredients %}
+        <input type="checkbox" name="ingredient" value="{{ ingredient.IngredientID }}"> {{ ingredient.IngredientName }}<br>
+        {% endfor %}
+        <br>
+        <input type="submit" value="Add to List">
+    </form>
+
+    <h2>Your Shopping List:</h2>
+    <ul>
+        {% for user_ingredient in user_ingredients %}
+        <li>{{ user_ingredient.IngredientName }} <a href="{{ url_for('remove_from_list', id=user_ingredient.IngredientID) }}">Remove</a></li>
+        {% endfor %}
+    </ul>
+    <a href="/meal_planner"><h4>Go back to home</h4></a>
+</body>
+</html>
+
