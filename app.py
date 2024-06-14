@@ -9,11 +9,11 @@ import re
 
 
 app = Flask(__name__)
-app.secret_key = 'PSI515356'
+app.secret_key = '....'
 
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = 'Swarali@#123'
+app.config['MYSQL_PASSWORD'] = '....@#123'
 app.config['MYSQL_DB'] = 's'
 app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
 
